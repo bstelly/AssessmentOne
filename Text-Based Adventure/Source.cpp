@@ -28,5 +28,6 @@ int main()
 		std::cout << "They are not equal" << std::endl;
 	}
 	
+	testTwo.ToLower();
 	system("pause");
 }
