@@ -3,7 +3,7 @@
 class MyString
 {
 private:
-	const char *mString;
+	const char* mString;
 
 public:
 	//Prototype: MyString()
@@ -13,6 +13,7 @@ public:
 	//Postcondition: A new instance of the MyString class is created
 	MyString();
 
+	MyString(const char* string);
 	//Prototype: int StringLength()
 	//Arguments: None
 	//Description: querys the string’s length and returns an interger
@@ -60,14 +61,14 @@ public:
 	//Description: Takes in a string and turns all characters into lowercase letters
 	//Precondition: There must be an instance of MyString class
 	//Postcondition: The string now consists of all lowercase letters
-	void ToLower();
+	MyString ToLower();
 
 	//Prototype: void ToUpper(MyString string)
 	//Arguments: the string being converted to uppercase letters
 	//Description: Takes in a string and turns all characters into uppercase letters
 	//Precondition: There must be an instance of MyString class
 	//Postcondition: The string now consists of all uppercase letters
-	void ToUpper(MyString string);
+	MyString ToUpper();
 
 	//Prototype: void FindSubString(MyString string)
 	//Arguments: takes in a string
@@ -78,6 +79,6 @@ public:
 
 
 };
-//	•	The ability to find a sub - string within the string class, starting from a certain index within the string
-//	•	The ability to replace a sub - string found within the string with a different sub - string
-//	•	The ability to set the string to an input C - style string
+//	•The ability to find a sub - string within the string class, starting from a certain index within the string
+//	•The ability to replace a sub - string found within the string with a different sub - string
+//	•The ability to set the string to an input C - style string
