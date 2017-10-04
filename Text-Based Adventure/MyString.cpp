@@ -128,3 +128,27 @@ MyString MyString::ToUpper()
 	return MyString(temp);
 }
 
+bool MyString::SubString(MyString substring)
+{
+	int counter = 0;
+	int subStringIndex = 0;
+	int substringLength = substring.StringLength();
+	for (int i = 0; i < StringLength(); i++)
+	{
+		if (mString[i] == substring[subStringIndex])
+		{
+			counter++;
+			subStringIndex++;
+		}
+	}
+	if (counter == substringLength)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+

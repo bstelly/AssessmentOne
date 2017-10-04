@@ -70,14 +70,14 @@ public:
 	//Postcondition: The string now consists of all uppercase letters
 	MyString ToUpper();
 
-	//Prototype: 
-	//Arguments: 
-	//Description: 
-	//Precondition: 
-	//Postcondition: 
-
+	//Prototype: bool SubString(MyString substring);
+	//Arguments: the substring you want to find
+	//Description: Finds a sub-string within the string class
+	//Precondition: there must be an instance of MyString class
+	//Postcondition: The function equals true or false depending on the result
+	bool SubString(MyString substring);
 };
-//  -The ability to find a substring within the string class
+
 //	•The ability to find a sub - string within the string class, starting from a certain index within the string
 //	•The ability to replace a sub - string found within the string with a different sub - string
 //	•The ability to set the string to an input C - style string
