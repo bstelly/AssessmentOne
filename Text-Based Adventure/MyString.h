@@ -40,14 +40,14 @@ public:
 	//Description: Adds a string to the end of another string
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: A new instance of MyString is created using both strings
-	void StringAppend(MyString &other);
+	MyString operator+(MyString &other);
 
 	//Prototype: void StringPrepend()
 	//Arguments: The string being applied
 	//Description: Adds a string to the front of another string
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: A new instance of MyString is created using both strings
-	void StringPrepend(MyString &other);
+	MyString Prepend(MyString &other);
 
 	//Prototype: char ConstantString(MyString string)
 	//Arguments: The string being converted into a constant char*
@@ -70,15 +70,14 @@ public:
 	//Postcondition: The string now consists of all uppercase letters
 	MyString ToUpper();
 
-	//Prototype: void FindSubString(MyString string)
-	//Arguments: takes in a string
+	//Prototype: 
+	//Arguments: 
 	//Description: 
 	//Precondition: 
 	//Postcondition: 
-	void FindSubstring(MyString string);
-
 
 };
+//  -The ability to find a substring within the string class
 //	•The ability to find a sub - string within the string class, starting from a certain index within the string
 //	•The ability to replace a sub - string found within the string with a different sub - string
 //	•The ability to set the string to an input C - style string

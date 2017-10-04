@@ -9,13 +9,13 @@ int main()
 	MyString testFour("Stelly");
 	int length = test.StringLength();
 	int lengthTwo = testTwo.StringLength();
-	int lengthThree = testThree.StringLength();
+	int lengthThree = testFour.StringLength();
 
 	if (testTwo == testThree)
 	{
 		std::cout << "They are equal" << std::endl;
 	}
-	else
+	else													//Should be equal
 	{
 		std::cout << "They are not equal" << std::endl;
 	}
@@ -23,11 +23,16 @@ int main()
 	{
 		std::cout << "They are equal" << std::endl;
 	}
-	else
+	else													//Should not be equal
 	{
 		std::cout << "They are not equal" << std::endl;
 	}
 	
-	testTwo.ToLower();
+	MyString lowercaseTest = testTwo.ToLower();
+	MyString uppercaseTest = testTwo.ToUpper();
+	MyString appendTest = testThree + testFour;
+	MyString prependTest = testThree.Prepend(testFour);
+
+
 	system("pause");
 }

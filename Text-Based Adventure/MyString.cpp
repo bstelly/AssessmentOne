@@ -20,11 +20,11 @@ int MyString::StringLength()
 	return counter;
 }
 
-//const char MyString::operator[](const int index)
-//{
-//	char accessed = mString[index];
-//	return accessed;
-//}
+const char MyString::operator[](const int index)
+{
+	char accessed = mString[index];
+	return accessed;
+}
 
 bool MyString::operator==(MyString & other)
 {
@@ -53,16 +53,40 @@ bool MyString::operator==(MyString & other)
 	}
 }
 
-//void MyString::StringAppend(MyString & other)
-//{
-//
-//}
-//
-//void MyString::StringPrepend(MyString & other)
-//{
-//
-//}
-//
+MyString MyString::operator+(MyString &other)
+{
+	char *newString = new char[255];
+	for (int i = 0; i < StringLength(); i++)
+	{
+		newString[i] = mString[i];
+	}
+	int newStringLength = StringLength();
+	for (int j = 0; j < other.StringLength(); j++)
+	{
+		newString[newStringLength] = other[j];
+		newStringLength++;
+	}
+	newString[newStringLength] = '\0';
+	return MyString(newString);
+}
+
+MyString MyString::Prepend(MyString & other)
+{
+	char *newString = new char[255];
+	for (int j = 0; j < other.StringLength(); j++)
+	{
+		newString[j] = other[j];
+	}
+	int newStringLength = other.StringLength();
+	for (int i = 0; i < StringLength(); i++)
+	{
+		newString[newStringLength] = mString[i];
+		newStringLength++;
+	}
+	newString[newStringLength] = '\0';
+	return MyString(newString);
+}
+
 //char MyString::ConstantString(MyString string)
 //{
 //
@@ -81,9 +105,9 @@ MyString MyString::ToLower()
 		{
 			temp[i] = mString[i];
 		}
-		return MyString(temp);
 	}
 	temp[StringLength()] = '\0';
+	return MyString(temp);
 }
 
 MyString MyString::ToUpper()
@@ -99,12 +123,8 @@ MyString MyString::ToUpper()
 		{
 			temp[i] = mString[i];
 		}
-		return MyString(temp);
 	}
 	temp[StringLength()] = '\0';
+	return MyString(temp);
 }
 
-//void MyString::FindSubstring(MyString string)
-//{
-//
-//}
