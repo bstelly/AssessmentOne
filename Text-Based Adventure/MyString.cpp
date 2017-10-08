@@ -137,8 +137,18 @@ bool MyString::SubString(MyString substring)
 	{
 		if (mString[i] == substring[subStringIndex])
 		{
-			counter++;
-			subStringIndex++;
+			for (int j = 0; j < StringLength(); j++)
+			{
+				if (mString[j] == substring[subStringIndex])
+				{
+					counter++;
+					subStringIndex++;
+				}
+				else
+				{
+					break;
+				}
+			}
 		}
 	}
 	if (counter == substringLength)
