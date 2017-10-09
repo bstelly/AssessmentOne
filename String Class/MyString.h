@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+#include <iostream>
+using namespace std;
 
 class MyString
 {
@@ -13,7 +16,13 @@ public:
 	//Postcondition: A new instance of the MyString class is created
 	MyString();
 
+	//Prototype: MyString()
+	//Arguments: None
+	//Description: Creates a new instance of the MyString class
+	//Precondition: None
+	//Postcondition: A new instance of the MyString class is created
 	MyString(const char* string);
+
 	//Prototype: int StringLength()
 	//Arguments: None
 	//Description: querys the string’s length and returns an interger
@@ -28,49 +37,49 @@ public:
 	//Postcondition: The character in the index can now be accessed
 	const char operator[](const int index);
 
-	//Prototype: bool StringCompare()
+	//Prototype: bool operator==(MyString &other)
 	//Arguments: The string we are comparing with
 	//Description: Compares to strings and returns true or false
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: returns true or false
 	bool operator==(MyString &other);
 
-	//Prototype: void StringAppend()
+	//Prototype: MyString operator+(MyString &other);
 	//Arguments: The string being applied
 	//Description: Adds a string to the end of another string
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: A new instance of MyString is created using both strings
 	MyString operator+(MyString &other);
 
-	//Prototype: void StringPrepend()
+	//Prototype: MyString Prepend(MyString &other);
 	//Arguments: The string being applied
 	//Description: Adds a string to the front of another string
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: A new instance of MyString is created using both strings
 	MyString Prepend(MyString &other);
 
-	//Prototype: char ConstantString(MyString string)
+	//Prototype: const char* ConstantString();
 	//Arguments: The string being converted into a constant char*
 	//Description: returns a string as a basic constant char*
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: The string passed into the function is now a const char*
 	const char* ConstantString();
 
-	//Prototype: void ToLower(MyString string)
+	//Prototype: void ToLower
 	//Arguments: the string being converted to lowercase letters
 	//Description: Takes in a string and turns all characters into lowercase letters
 	//Precondition: There must be an instance of MyString class
 	//Postcondition: The string now consists of all lowercase letters
 	MyString ToLower();
 
-	//Prototype: void ToUpper(MyString string)
+	//Prototype: void ToUpper
 	//Arguments: the string being converted to uppercase letters
 	//Description: Takes in a string and turns all characters into uppercase letters
 	//Precondition: There must be an instance of MyString class
 	//Postcondition: The string now consists of all uppercase letters
 	MyString ToUpper();
 
-	//Prototype: bool SubString(MyString substring);
+	//Prototype: bool FindSubString(MyString substring);
 	//Arguments: the substring you want to find
 	//Description: Finds a sub-string within the string class
 	//Precondition: there must be an instance of MyString class
@@ -84,6 +93,13 @@ public:
 	//Postcondition: The function equals true or false depending on the result
 	bool FindSubStringFromIndex(int index, MyString substring);
 
+	//Prototype: 	friend istream & operator >> (istream &in, MyString string);
+	//Arguments: 
+	//Description: 
+	//Precondition: 
+	//Postcondition: 
+	friend istream & operator >> (istream &in, MyString string);
+	
 	//Prototype: MyString ReplaceSubString(MyString substring, MyString newSubString);
 	//Arguments: 
 	//Description: 
@@ -91,3 +107,6 @@ public:
 	//Postcondition: 
 	MyString ReplaceSubString(MyString substring, MyString newSubString);
 };
+
+
+

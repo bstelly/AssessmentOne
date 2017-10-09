@@ -1,4 +1,5 @@
 #include "MyString.h"
+using namespace std;
 
 MyString::MyString()
 {
@@ -200,8 +201,16 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 	}
 }
 
-
-MyString ReplaceSubString(MyString substring, MyString newSubString)
+istream & operator >> (istream &in, MyString string)
 {
-	char *newString = new char[255];
+	in >> string.mString;
+	return in;
 }
+
+
+
+
+//MyString ReplaceSubString(MyString substring, MyString newSubString)
+//{
+//	char *newString = new char[255];
+//}
