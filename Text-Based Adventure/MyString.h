@@ -54,7 +54,7 @@ public:
 	//Description: returns a string as a basic constant char*
 	//Precondition: There needs to be two instances of MyString class
 	//Postcondition: The string passed into the function is now a const char*
-	char ConstantString(MyString string);
+	const char* ConstantString();
 
 	//Prototype: void ToLower(MyString string)
 	//Arguments: the string being converted to lowercase letters
@@ -75,9 +75,17 @@ public:
 	//Description: Finds a sub-string within the string class
 	//Precondition: there must be an instance of MyString class
 	//Postcondition: The function equals true or false depending on the result
-	bool SubString(MyString substring);
+	bool FindSubString(MyString substring);
+
+	//Prototype: bool FindSubStringFromIndex(int index, MyString substring);
+	//Arguments: the index to begin with and the substring you want to find
+	//Description: Finds a sub-string within the string class
+	//Precondition: there must be an instance of MyString class
+	//Postcondition: The function equals true or false depending on the result
+	bool FindSubStringFromIndex(int index, MyString substring);
+
+	MyString ReplaceSubString(MyString substring, MyString newSubString);
 };
 
-//	•The ability to find a sub - string within the string class, starting from a certain index within the string
+
 //	•The ability to replace a sub - string found within the string with a different sub - string
-//	•The ability to set the string to an input C - style string

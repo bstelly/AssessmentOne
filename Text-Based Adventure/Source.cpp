@@ -33,7 +33,7 @@ int main()
 	MyString appendTest = testThree + testFour;
 	MyString prependTest = testThree.Prepend(testFour);
 
-	if (testThree.SubString("ret"))
+	if (testThree.FindSubString("ret"))
 	{
 		std::cout << "true" << std::endl;
 	}
@@ -41,6 +41,14 @@ int main()
 	{
 		std::cout << "false" << std::endl;
 	}
+
+
+
+
+
+
+
+
 
 	system("pause");
 }

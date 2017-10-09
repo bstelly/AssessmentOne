@@ -87,10 +87,11 @@ MyString MyString::Prepend(MyString & other)
 	return MyString(newString);
 }
 
-//char MyString::ConstantString(MyString string)
-//{
-//
-//}
+const char* MyString::ConstantString()
+{
+	const char* string = mString;
+	return string;
+}
 
 MyString MyString::ToLower()
 {
@@ -128,7 +129,7 @@ MyString MyString::ToUpper()
 	return MyString(temp);
 }
 
-bool MyString::SubString(MyString substring)
+bool MyString::FindSubString(MyString substring)
 {
 	int counter = 0;
 	int subStringIndex = 0;
@@ -137,21 +138,22 @@ bool MyString::SubString(MyString substring)
 	{
 		if (mString[i] == substring[subStringIndex])
 		{
-			for (int j = 0; j < StringLength(); j++)
+			for (int subStringIndex = 0; subStringIndex < substring.StringLength(); subStringIndex++)
 			{
-				if (mString[j] == substring[subStringIndex])
+				if (mString[i] == substring[subStringIndex])
 				{
 					counter++;
-					subStringIndex++;
+					i++;
 				}
 				else
 				{
+					i = 0;
 					break;
 				}
 			}
 		}
 	}
-	if (counter == substringLength)
+	if (counter == substring.StringLength())
 	{
 		return true;
 	}
@@ -161,4 +163,39 @@ bool MyString::SubString(MyString substring)
 	}
 
 }
+
+bool MyString::FindSubStringFromIndex(int index, MyString substring)
+{
+	int counter = 0;
+	int subStringIndex = 0;
+	int substringLength = substring.StringLength();
+	for (int i = index; i < StringLength(); i++)
+	{
+		if (mString[i] == substring[subStringIndex])
+		{
+			for (int subStringIndex = 0; subStringIndex < substring.StringLength(); subStringIndex++)
+			{
+				if (mString[i] == substring[subStringIndex])
+				{
+					counter++;
+					i++;
+				}
+				else
+				{
+					i = 0;
+					break;
+				}
+			}
+		}
+	}
+	if (counter == substring.StringLength())
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 
