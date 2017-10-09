@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{63C8E69A-1591-44D8-9610-4EF0E084C729}</ProjectGuid>
-    <RootNamespace>StringClass</RootNamespace>
+    <ProjectGuid>{B3690A50-BA1F-4F8B-A179-740177510799}</ProjectGuid>
+    <RootNamespace>Wumpus</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
