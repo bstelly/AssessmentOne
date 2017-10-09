@@ -42,8 +42,14 @@ int main()
 		std::cout << "false" << std::endl;
 	}
 
-
-
+	if (testThree.FindSubStringFromIndex(1, "ret"))
+	{
+		std::cout << "true" << std::endl;
+	}
+	else
+	{
+		std::cout << "false" << std::endl;
+	}
 
 
 
