@@ -15,7 +15,7 @@ int MyString::StringLength()
 	int counter = 0;
 	while (mString[counter] != '\0')
 	{
-		counter++;	
+		counter++;
 	}
 	return counter;
 }
@@ -201,3 +201,7 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 }
 
 
+MyString ReplaceSubString(MyString substring, MyString newSubString)
+{
+	char *newString = new char[255];
+}

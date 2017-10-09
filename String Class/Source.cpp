@@ -27,7 +27,7 @@ int main()
 	{
 		std::cout << "They are not equal" << std::endl;
 	}
-	
+
 	MyString lowercaseTest = testTwo.ToLower();
 	MyString uppercaseTest = testTwo.ToUpper();
 	MyString appendTest = testThree + testFour;

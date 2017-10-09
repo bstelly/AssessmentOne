@@ -84,8 +84,10 @@ public:
 	//Postcondition: The function equals true or false depending on the result
 	bool FindSubStringFromIndex(int index, MyString substring);
 
+	//Prototype: MyString ReplaceSubString(MyString substring, MyString newSubString);
+	//Arguments: 
+	//Description: 
+	//Precondition: 
+	//Postcondition: 
 	MyString ReplaceSubString(MyString substring, MyString newSubString);
 };
-
-
-//	•The ability to replace a sub - string found within the string with a different sub - string
