@@ -9,15 +9,18 @@ void Dungeon::GenRooms()
 
 Dungeon::Dungeon()
 {
-	mNumCols = 10;
-	mNumRows = 10;
+	int rows = 10;
+	int cols = 10;
+	mRooms = new Point2D[rows * cols];
+	GenRooms();
+
 }
 
 Dungeon::Dungeon(Player* player, int rows, int cols)
 {
-	mPlayer = player;
 	mNumRows = rows;
 	mNumCols = cols;
+
 }
 
 //int CheckPlayerPosition()

@@ -3,14 +3,14 @@
 #include "Player.h"
 #include "Point2D.h"
 #include "Test.h"
+#include "Dungeon.h"
 
 
 int main()
 {
 	RunFunctionTest();
-	Player player;
-	player.MovePlayer();
 
-	player;
+
+	
 	system("pause");
 }

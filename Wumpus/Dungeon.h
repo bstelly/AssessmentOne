@@ -6,7 +6,7 @@
 class Dungeon
 {
 private:
-	Point2D mRooms;
+	Point2D* mRooms;
 	Player* mPlayer;
 	int mNumCols;
 	int mNumRows;

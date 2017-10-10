@@ -6,9 +6,7 @@ class Player
 {
 private:
 	Point2D mPosition;
-	MyString commands[];
 public:
 	Player();
 	void MovePlayer();
-	void Commands();
 };
