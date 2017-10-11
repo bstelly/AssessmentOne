@@ -32,7 +32,6 @@ void RunFunctionTest()
 {
 	{
 		MyString string;
-		string = "afksl";
 		MyString stringTwo("Brett");
 		MyString stringThree("Brett");
 		MyString stringFour("Stelly");

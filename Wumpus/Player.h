@@ -9,4 +9,5 @@ private:
 public:
 	Player();
 	void MovePlayer();
+	Point2D GetPosition();
 };

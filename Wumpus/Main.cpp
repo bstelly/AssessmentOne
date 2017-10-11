@@ -2,15 +2,20 @@
 #include "MyString.h"
 #include "Player.h"
 #include "Point2D.h"
-#include "Test.h"
 #include "Dungeon.h"
 
 
 int main()
 {
-	RunFunctionTest();
+	Player* player;
+	Dungeon dungeon(player, 10, 10);
+	int i = 0;
 
-
-	
+	while (i < 10)
+	{
+		player->MovePlayer();
+		//dungeon.CheckPlayerPosition();
+		i++;
+	}
 	system("pause");
 }

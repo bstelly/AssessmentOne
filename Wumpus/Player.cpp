@@ -1,5 +1,4 @@
 #include "Player.h"
-#include "Commands.h"
 #include <iostream>
 #include <string>
 
@@ -33,4 +32,8 @@ void Player::MovePlayer()
 		Point2D currentPosition = mPosition;
 		mPosition = currentPosition + Point2D(0, -1);
 	}
+}
+Point2D Player::GetPosition()
+{
+	return mPosition;
 }

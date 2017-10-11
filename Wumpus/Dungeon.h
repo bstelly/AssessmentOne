@@ -15,4 +15,5 @@ public:
 	Dungeon();
 	Dungeon(Player* player, int rows, int cols);
 	int CheckPlayerPosition();
+
 };
