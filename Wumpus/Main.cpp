@@ -8,13 +8,13 @@
 int main()
 {
 	Player* player;
-	Dungeon dungeon(player, 10, 10);
+	Dungeon dungeon(10, 10);
 	int i = 0;
 
 	while (i < 10)
 	{
 		player->MovePlayer();
-		//dungeon.CheckPlayerPosition();
+		dungeon.CheckPlayerPosition();
 		i++;
 	}
 	system("pause");

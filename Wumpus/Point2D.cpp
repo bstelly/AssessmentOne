@@ -30,7 +30,7 @@ Point2D Point2D::operator - (const Point2D & other)
 
 bool Point2D::operator == (const Point2D & other)
 {
-	if (mX == other.mX || mY == other.mY)
+	if (mX == other.mX && mY == other.mY)
 	{
 		return true;
 	}

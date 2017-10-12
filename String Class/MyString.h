@@ -16,7 +16,7 @@ public:
 	//Postcondition: A new instance of the MyString class is created
 	MyString();
 
-	//Prototype: MyString()
+	//Prototype: MyString(const char* string)
 	//Arguments: None
 	//Description: Creates a new instance of the MyString class
 	//Precondition: None

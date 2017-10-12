@@ -112,6 +112,7 @@
   <ItemGroup>
     <ClInclude Include="Commands.h" />
     <ClInclude Include="Dungeon.h" />
+    <ClInclude Include="Hazard.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point2D.h" />
@@ -119,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Dungeon.cpp" />
+    <ClCompile Include="Hazard.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Player.cpp" />
