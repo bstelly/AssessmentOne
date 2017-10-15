@@ -33,14 +33,14 @@ bool MyString::operator==(MyString & other)
 	if (StringLength() == other.StringLength())
 	{
 		for (int i = 0; i < StringLength(); i++)
-		{
+		{											//Checks to see if the two strings are the same length
 			if (mString[i] == other.mString[i])
 			{
 				counter++;
 			}
 		}
-		if (counter == StringLength())
-		{
+		if (counter == StringLength())				//counter keeps track of how many indexes are the same
+		{											//If counter equals the same number as the number of indexes, then the strings are equal
 			return true;
 		}
 		else
@@ -59,15 +59,15 @@ MyString MyString::operator+(MyString &other)
 	char *newString = new char[255];
 	for (int i = 0; i < StringLength(); i++)
 	{
-		newString[i] = mString[i];
+		newString[i] = mString[i];				//copies the indexes of the string to a new string
 	}
-	int newStringLength = StringLength();
+	int newStringLength = StringLength();			
 	for (int j = 0; j < other.StringLength(); j++)
 	{
-		newString[newStringLength] = other[j];
+		newString[newStringLength] = other[j];		//assigns the characters of the other string to the end of the new string
 		newStringLength++;
 	}
-	newString[newStringLength] = '\0';
+	newString[newStringLength] = '\0';				//terminates the new string
 	return MyString(newString);
 }
 
@@ -96,37 +96,37 @@ const char* MyString::ConstantString()
 
 MyString MyString::ToLower()
 {
-	char *temp = new char[255];
+	char *temp = new char[255];						//creates a new string
 	for (int i = 0; i < StringLength(); i++)
 	{
 		if (mString[i] >= 65 && mString[i] < 97)
 		{
-			temp[i] = mString[i] + 32;
+			temp[i] = mString[i] + 32;				//turns an uppercase letter into a lowercase and assigns it to the new string
 		}
 		else
 		{
-			temp[i] = mString[i];
+			temp[i] = mString[i];					//if the letter is already lowercase then it gets assigned to the new string
 		}
 	}
-	temp[StringLength()] = '\0';
+	temp[StringLength()] = '\0';					//terminates the string
 	return MyString(temp);
 }
 
 MyString MyString::ToUpper()
 {
-	char *temp = new char[255];
+	char *temp = new char[255];						//creates a new string
 	for (int i = 0; i < StringLength(); i++)
 	{
 		if (mString[i] >= 97 && mString[i] <= 122)
 		{
-			temp[i] = mString[i] - 32;
+			temp[i] = mString[i] - 32;				//turns a lowercase letter into an uppercase and assigns it to the new string
 		}
 		else
 		{
-			temp[i] = mString[i];
+			temp[i] = mString[i];					//if the letter is already uppercase, it gets assigned to the new string
 		}
 	}
-	temp[StringLength()] = '\0';
+	temp[StringLength()] = '\0';					//terminates the string
 	return MyString(temp);
 }
 
@@ -134,23 +134,21 @@ bool MyString::FindSubString(MyString substring)
 {
 	int counter = 0;
 	int subStringIndex = 0;
-	int substringLength = substring.StringLength();
 	for (int i = 0; i < StringLength(); i++)
 	{
-		if (mString[i] == substring[subStringIndex])
+		if (mString[i] == substring[subStringIndex])			//Checks to see if the first index of two strings are equal
 		{
-			for (int subStringIndex = 0; subStringIndex < substring.StringLength();
+			for (subStringIndex; subStringIndex < substring.StringLength();	//if equal loop to check if the next next indexes are equal
 				subStringIndex++)
 			{
 				if (mString[i] == substring[subStringIndex])
 				{
-					counter++;
+					counter++;									//if next index is equal counter goes up one for each iteration
 					i++;
 				}
 				else
 				{
-					i = 0;
-					break;
+					break;										// if not equal break from the loop
 				}
 			}
 		}
@@ -158,7 +156,8 @@ bool MyString::FindSubString(MyString substring)
 	if (counter == substring.StringLength())
 	{
 		return true;
-	}
+	}												//if counter is the same as the length of the substring then 
+													//the FindSubString() returns true if not return false
 	else
 	{
 		return false;
@@ -170,23 +169,21 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 {
 	int counter = 0;
 	int subStringIndex = 0;
-	int substringLength = substring.StringLength();
 	for (int i = index; i < StringLength(); i++)
 	{
-		if (mString[i] == substring[subStringIndex])
+		if (mString[i] == substring[subStringIndex])        //Checks to see if the first index of two strings are equal
 		{
-			for (int subStringIndex = 0; subStringIndex < substring.StringLength();
+			for (subStringIndex; subStringIndex < substring.StringLength();
 				subStringIndex++)
 			{
-				if (mString[i] == substring[subStringIndex])
+				if (mString[i] == substring[subStringIndex])    	//if equal loop to check if the next next indexes are equal
 				{
-					counter++;
+					counter++;					//if next index is equal counter goes up one for each iteration
 					i++;
 				}
 				else
 				{
-					i = 0;
-					break;
+					break;						// if not equal break from the loop
 				}
 			}
 		}
@@ -195,8 +192,8 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 	{
 		return true;
 	}
-	else
-	{
+	else									//if counter is the same as the length of the substring then 
+	{										//the FindSubString() returns true if not return false
 		return false;
 	}
 }
