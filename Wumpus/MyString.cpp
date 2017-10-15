@@ -134,12 +134,11 @@ bool MyString::FindSubString(MyString substring)
 {
 	int counter = 0;
 	int subStringIndex = 0;
-	int substringLength = substring.StringLength();
 	for (int i = 0; i < StringLength(); i++)
 	{
 		if (mString[i] == substring[subStringIndex])
 		{
-			for (int subStringIndex = 0; subStringIndex < substring.StringLength();
+			for (subStringIndex; subStringIndex < substring.StringLength();
 				subStringIndex++)
 			{
 				if (mString[i] == substring[subStringIndex])
@@ -149,7 +148,6 @@ bool MyString::FindSubString(MyString substring)
 				}
 				else
 				{
-					i = 0;
 					break;
 				}
 			}
@@ -170,12 +168,11 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 {
 	int counter = 0;
 	int subStringIndex = 0;
-	int substringLength = substring.StringLength();
 	for (int i = index; i < StringLength(); i++)
 	{
 		if (mString[i] == substring[subStringIndex])
 		{
-			for (int subStringIndex = 0; subStringIndex < substring.StringLength();
+			for (subStringIndex; subStringIndex < substring.StringLength();
 				subStringIndex++)
 			{
 				if (mString[i] == substring[subStringIndex])
@@ -184,8 +181,7 @@ bool MyString::FindSubStringFromIndex(int index, MyString substring)
 					i++;
 				}
 				else
-				{
-					i = 0;
+				{ 
 					break;
 				}
 			}
