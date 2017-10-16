@@ -1,14 +1,17 @@
 #pragma once
 #include "Player.h"
-#include "Point2D.h"
-#include "MyString.h"
-#include <time.h>
+#include "Hazard.h"
+#include "Wumpus.h"
+#include "Treasure.h"
 
 class Dungeon
 {
 private:
 	Point2D* mRooms;
 	Player* mPlayer;
+	Hazard* mHazard;
+	Wumpus* mWumpus;
+	Treasure* mGold;
 	int mNumCols;
 	int mNumRows;
 
@@ -30,11 +33,12 @@ public:
 
 	//Prototype: Dungeon(int rows, int cols)
 	//Arguments: two intergers
-	//Description: Creates a new instance of the dungeon class based on the arguments passed in
+	//Description:	Creates a new instance of the dungeon class based on the arguments
+	//				passed in
 	//Precondition: None
 	//Postcondition: A new instance of the dungeon class is created
 	//Protection Level: Public
-	Dungeon(int rows, int cols);
+	Dungeon(Player* player, int rows, int cols);
 
 	//Prototype: CheckPlayerPosition()
 	//Arguments: None
