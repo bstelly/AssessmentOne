@@ -21,11 +21,15 @@ int main()
 	assert(stringTwo.ToUpper() == stringFive);
 	assert(stringTwo.ToLower() == stringSix);
 	assert(stringThree.FindSubString("ret") == true);
-	assert(stringThree.FindSubStringFromIndex(1, "ret") == true);
-	MyString stringNine = stringThree + stringFour;
+	assert(stringThree.FindSubStringFromIndex(1, "ret") == true);		//Asserts will break the program if one of the conditions
+	MyString stringNine = stringThree + stringFour;						//equals false
 	assert(stringNine == stringSeven);
 	assert(stringThree.Prepend(stringFour) == stringEight);
 	
+
+
+//String Unit Test - creates a text file printing the test name and the results
+
 	int testNum = 1;
 	const char* test = "StringLength";
 	if (stringTwo.StringLength() == 5)
