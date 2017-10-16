@@ -20,7 +20,7 @@ public:
 	//Description: Moves the player by changing its position based on user input
 	//Precondition: An instance of the player class must be created
 	//Postcondition: The player has a new position
-	//Protection Level: Pulic
+	//Protection Level: Public
 	void MovePlayer();
 
 	//Prototype: GetPosition()
@@ -30,4 +30,6 @@ public:
 	//Postcondition: Point2D GetPosition() now equals a Point2D
 	//Protection Level: Public
 	Point2D GetPosition();
+
+	void SetPosition(Point2D position);
 };

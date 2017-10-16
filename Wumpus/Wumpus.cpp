@@ -1,18 +1,18 @@
-#include "Hazard.h"
+#include "Wumpus.h"
 #include <time.h>
 
-Hazard::Hazard()
+Wumpus::Wumpus()
 {
 	mPosition = Point2D();
 }
 
-void Hazard::SetPosition(float x, float y)
+void Wumpus::SetPosition(float x, float y)
 {
 	Point2D position(x, y);
 	mPosition = position;
 }
 
-Point2D Hazard::GetPosition()
+Point2D Wumpus::GetPosition()
 {
 	return mPosition;
 }

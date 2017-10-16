@@ -18,9 +18,6 @@
     <ClInclude Include="MyString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Test.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -30,10 +27,16 @@
     <ClInclude Include="Dungeon.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Commands.h">
+    <ClInclude Include="Hazard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Hazard.h">
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wumpus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Treasure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -50,13 +53,16 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Dungeon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Hazard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wumpus.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Treasure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

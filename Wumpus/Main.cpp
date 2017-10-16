@@ -3,19 +3,12 @@
 #include "Player.h"
 #include "Point2D.h"
 #include "Dungeon.h"
+#include "Game.h"
 
 
 int main()
 {
-	Player* player;
-	Dungeon dungeon(10, 10);
-	int i = 0;
+	Game();
 
-	while (i < 10)
-	{
-		player->MovePlayer();
-		dungeon.CheckPlayerPosition();
-		i++;
-	}
-	system("pause");
+	
 }

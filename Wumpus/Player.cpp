@@ -37,3 +37,8 @@ Point2D Player::GetPosition()
 {
 	return mPosition;
 }
+
+void Player::SetPosition(Point2D position)
+{
+	mPosition = position;
+}

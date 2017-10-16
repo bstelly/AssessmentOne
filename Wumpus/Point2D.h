@@ -1,5 +1,5 @@
 #pragma once
-
+#include <iostream>
 class Point2D
 {
 private:
@@ -17,7 +17,7 @@ public:
 
 	//Prototype: Point2D(float x, float y)
 	//Arguments: takes in two floats
-	//Description: Creates a new instance of the Point2D class based on arguments passed in
+	//Description: Creates a new instance of Point2D class based on arguments passed in
 	//Precondition: None
 	//Postcondition: a new instance of the Point2D class is created
 	//Protection Level: Public
