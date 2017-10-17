@@ -32,4 +32,12 @@ public:
 	Point2D GetPosition();
 
 	void SetPosition(Point2D position);
+
+	void SetX_WhenBelowZero();
+
+	void SetY_WhenBelowZero();
+
+	void SetX_WhenAboveMax();
+
+	void SetY_WhenAboveMax();
 };

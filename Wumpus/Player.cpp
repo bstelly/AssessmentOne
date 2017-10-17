@@ -42,3 +42,27 @@ void Player::SetPosition(Point2D position)
 {
 	mPosition = position;
 }
+
+void Player::SetX_WhenBelowZero()
+{
+	Point2D currentPosition = mPosition;
+	mPosition = currentPosition + Point2D(1, 0);
+}
+
+void Player::SetY_WhenBelowZero()
+{
+	Point2D currentPosition = mPosition;
+	mPosition = currentPosition + Point2D(0, 1);
+}
+
+void Player::SetX_WhenAboveMax()
+{
+	Point2D currentPosition = mPosition;
+	mPosition = currentPosition + Point2D(-1, 0);
+}
+
+void Player::SetY_WhenAboveMax()
+{
+	Point2D currentPosition = mPosition;
+	mPosition = currentPosition + Point2D(0, -1);
+}
