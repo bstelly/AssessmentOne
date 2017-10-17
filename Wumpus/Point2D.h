@@ -47,6 +47,14 @@ public:
 	//Protection Level: Public
 	bool operator == (const Point2D & other);
 
+	//Prototype: 	bool operator != (const Point2D & other);
+	//Arguments: Takes in a constant Point2D variable
+	//Description: Allows two Point2D's to be compared
+	//Precondition: Two instances of the Point2D class must be created
+	//Postcondition: The const Point2D is applied
+	//Protection Level: Public
+	bool operator != (const Point2D & other);
+
 	//Prototype: float GetX()
 	//Arguments: None
 	//Description: returns mX
@@ -62,4 +70,6 @@ public:
 	//Postcondition: The value of mY is returned
 	//Protection Level: public
 	float GetY();
+
+
 };

@@ -40,6 +40,18 @@ bool Point2D::operator == (const Point2D & other)
 	}
 }
 
+bool Point2D::operator != (const Point2D & other)
+{
+	if (mX != other.mX && mY != other.mY)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 float Point2D::GetX()
 {
 	return mX;
@@ -49,3 +61,4 @@ float Point2D::GetY()
 {
 	return mY;
 }
+
