@@ -9,6 +9,11 @@
 int main()
 {
 	Game();
-
+	while (PlayAgain() == 0)
+	{
+		Game();
+		system("cls");
+		PlayAgain();
+	}
 	
 }

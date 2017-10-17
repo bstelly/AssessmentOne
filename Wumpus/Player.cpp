@@ -12,6 +12,8 @@ void Player::MovePlayer()
 	char direction;
 	std::cout << "Where would you like to go?" << endl;
 	std::cin >> direction;
+	cout << endl;
+	cout << endl;
 	if (direction == 'W' || direction == 'w')
 	{
 		Point2D currentPosition = mPosition;
@@ -66,3 +68,24 @@ void Player::SetY_WhenAboveMax()
 	Point2D currentPosition = mPosition;
 	mPosition = currentPosition + Point2D(0, -1);
 }
+
+//void Player::DirectionOutput()
+//{
+//	if (MovePlayer() == 1)
+//	{
+//		cout << "You move forward through the darkness, wandering aimlessly, unable to";
+//		cout << " see.\n";
+//	}
+//	else if (MovePlayer() == 2)
+//	{
+//		cout << "You move to the right\n";
+//	}
+//	else if (MovePlayer() == 3)
+//	{
+//		cout << "You move to the left\n";
+//	}
+//	else if (MovePlayer() == 4)
+//	{
+//		cout << "You turn around and go back\n";
+//	}
+//}
