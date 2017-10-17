@@ -24,6 +24,10 @@ void DisplayInstructions()
 	cout << "Wumpus World is played using the 'W', 'A', 'S', 'D' keys.\n";
 	cout << "'W' is forward, 'A' is left, 'S' is backward, and 'D' is right\n";
 	cout << endl;
+	cout << "When starting the game, you have to choose how big the dungeon grid is.\n";
+	cout << "Try not to input numbers smaller than 5 for the rows and columns for";
+	cout << "a better playing field.\n";
+	cout << endl;
 }
 
 void Game()
@@ -51,6 +55,14 @@ void Game()
 	std::cin >> numOfRows;
 	std::cout << "How many columns would you like the dungeon to have?" << std::endl;
 	std::cin >> numOfCols;
+	system("cls");
+	cout << "You venture into the dangerous cave, home of the wumpus, to begin your search \n";
+	cout << "for fabled treasure. The cave is dark and you soon find yourself unable to see.\n";
+	cout << "You will have to rely on your senses and instincts in order to find the \n";
+	cout << "treasure and survive.";
+	cout << endl;
+	cout << endl;
+	system("pause");
 	system("cls");
 	Dungeon dungeon(&player, numOfRows, numOfCols);
 	
