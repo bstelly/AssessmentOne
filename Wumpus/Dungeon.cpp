@@ -41,6 +41,7 @@ void Dungeon::GenRooms()
 	}
 	randX = rand() % mNumCols;
 	mGold->SetPosition(randX, randY);
+
 } 
 Dungeon::Dungeon()
 {
@@ -77,7 +78,7 @@ int Dungeon::CheckPlayerPosition()							//return 0 if enter empty room
 	Point2D wallThree(mNumCols + 1, 0);
 	Point2D wallFour(-1, 0);
 
-	//If trying to go out of dungeon boundary, this loop brings player back a step.
+	//If trying to go out of dungeon boundary these variables brings player back a step.
 	Point2D wallOneNewPos(0, 0);
 	Point2D wallTwoNewPos(0, mNumRows);
 	Point2D wallThreeNewPos(mNumCols, 0);
@@ -91,18 +92,22 @@ int Dungeon::CheckPlayerPosition()							//return 0 if enter empty room
 		if (mPlayer->GetPosition() == wallOne)
 		{
 			mPlayer->SetPosition(wallOneNewPos);
+			return 0;
 		}
 		else if (mPlayer->GetPosition() == wallTwo)
 		{
 			mPlayer->SetPosition(wallTwoNewPos);
+			return 0;
 		}
 		else if (mPlayer->GetPosition() == wallThree)
 		{
 			mPlayer->SetPosition(wallThreeNewPos);
+			return 0;
 		}
 		else if (mPlayer->GetPosition() == wallFour)
 		{
 			mPlayer->SetPosition(wallFourNewPos);
+			return 0;
 		}
 	}
 	
