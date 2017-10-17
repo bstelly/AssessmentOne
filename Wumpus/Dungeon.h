@@ -14,6 +14,7 @@ private:
 	Treasure* mGold;
 	int mNumCols;
 	int mNumRows;
+	int mNumHazards;
 
 	//Prototype: Void GenRooms()
 	//Arguments: None
@@ -47,5 +48,8 @@ public:
 	//Postcondition: returns an interger that corresponds with player status 
 	//Protection Level: Public
 	int CheckPlayerPosition();
+
+	
+	void CheckForNeighbors();
 
 };

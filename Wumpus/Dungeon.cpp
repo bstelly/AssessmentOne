@@ -1,5 +1,4 @@
 #include "Dungeon.h"
-#include "Player.h"
 #include "Point2D.h"
 #include <time.h>	
 #include <iostream>
@@ -22,6 +21,7 @@ void Dungeon::GenRooms()
 	float randX;
 	float randY;
 	int numHazards = rand() % ((mNumCols * mNumRows) / 3);
+	mNumHazards = numHazards;
 	for (int iter = 0; iter < numHazards; iter++)
 	{
 		randX = rand() % mNumCols;
@@ -33,14 +33,31 @@ void Dungeon::GenRooms()
 	randX = rand() % mNumCols;
 	randY = rand() % mNumRows;
 	mWumpus->SetPosition(randX, randY);
-	
+	while (mWumpus->GetPosition() == mHazard->GetPosition())
+	{
+		randX = rand() % mNumCols;
+		randY = rand() % mNumRows;
+		mWumpus->SetPosition(randX, randY);
+	}
+
 	//Place treasure in a random room deeper in the dungeon
+
 	while (randY <= (mNumRows / 2))
 	{
 		randY = rand() % mNumRows;
 	}
 	randX = rand() % mNumCols;
 	mGold->SetPosition(randX, randY);
+	while (mGold->GetPosition() == mWumpus->GetPosition() && mGold->GetPosition() ==
+		mHazard->GetPosition())
+	{
+		while (randY <= (mNumRows / 2))
+		{
+			randY = rand() % mNumRows;
+		}
+		randX = rand() % mNumCols;
+		mGold->SetPosition(randX, randY);
+	}
 
 } 
 Dungeon::Dungeon()
@@ -70,55 +87,80 @@ Dungeon::Dungeon(Player* player, int rows, int cols)
 
 
 
-int Dungeon::CheckPlayerPosition()							//return 0 if enter empty room
-{															//return 1 if fall into a pit
-	//Dungeon Boundaries									//return 2 if treasure's found
-	Point2D wallOne(0, -1);
-	Point2D wallTwo(0, mNumRows + 1);
-	Point2D wallThree(mNumCols + 1, 0);
-	Point2D wallFour(-1, 0);
-
-	//If trying to go out of dungeon boundary these variables brings player back a step.
-	Point2D wallOneNewPos(0, 0);
-	Point2D wallTwoNewPos(0, mNumRows);
-	Point2D wallThreeNewPos(mNumCols, 0);
-	Point2D wallFourNewPos(0, 0);
+int Dungeon::CheckPlayerPosition()		//return 0 if enter empty room
+{										//return 1 if fall in a pit
+										//return 2 if caught by the wumpus
+										//return 3 if treasure's found
 	
-	//Check to see if player steps out of dungeon boundaries
-	if (mPlayer->GetPosition() == wallOne || mPlayer->GetPosition() == wallTwo ||
-		mPlayer->GetPosition() == wallThree || mPlayer->GetPosition() == wallFour)
+	//If Statements to check if the player is within the dungeon boundaries
+	if (mPlayer->GetPosition().GetX() < 0)
 	{
 		std::cout << "You ran into a wall" << std::endl;
-		if (mPlayer->GetPosition() == wallOne)
-		{
-			mPlayer->SetPosition(wallOneNewPos);
-			return 0;
-		}
-		else if (mPlayer->GetPosition() == wallTwo)
-		{
-			mPlayer->SetPosition(wallTwoNewPos);
-			return 0;
-		}
-		else if (mPlayer->GetPosition() == wallThree)
-		{
-			mPlayer->SetPosition(wallThreeNewPos);
-			return 0;
-		}
-		else if (mPlayer->GetPosition() == wallFour)
-		{
-			mPlayer->SetPosition(wallFourNewPos);
-			return 0;
-		}
+		mPlayer->SetX_WhenBelowZero();
+		return 0;
 	}
-	
-	else if (mPlayer->GetPosition() == mHazard->GetPosition())	
+	if (mPlayer->GetPosition().GetX() > mNumCols)
 	{
-		std::cout << "You have fallen into a pit" << std::endl;
+		std::cout << "You ran into a wall" << std::endl;
+		mPlayer->SetX_WhenAboveMax();
+		return 0;
+	}
+	if (mPlayer->GetPosition().GetY() < 0)
+	{
+		std::cout << "You ran into a wall" << std::endl;
+		mPlayer->SetY_WhenBelowZero();
+		return 0;
+	}
+	if (mPlayer->GetPosition().GetY() > mNumRows)
+	{
+		std::cout << "You ran into a wall" << std::endl;
+		mPlayer->SetY_WhenAboveMax();
+		return 0;
+	}
+
+	//If statements to check if player is in a wumpus, pit or gold room
+	if (mPlayer->GetPosition() == mHazard->GetPosition())
+	{
 		return 1;
+	}
+	else if (mPlayer->GetPosition() == mWumpus->GetPosition())
+	{
+		return 2;
+	}
+	else if (mPlayer->GetPosition() == mGold->GetPosition())
+	{
+		return 3;
 	}
 	else
 	{
 		
 		return 0;
+	}
+}
+
+void Dungeon::CheckForNeighbors()
+{
+	Point2D NeighborUp(0, 1);
+	Point2D NeighborDown(0, -1);
+	Point2D NeighborLeft(-1, 0);
+	Point2D NeighborRight(1, 0);
+	Point2D validNeighborPos[4] = {NeighborUp, NeighborRight, NeighborDown, NeighborLeft};
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < mNumHazards; j++)
+		{
+			if (mPlayer->GetPosition() + validNeighborPos[i] == mHazard[j].GetPosition())
+			{
+				std::cout << "You feel a cool breeze" << std::endl;
+			}
+		}
+		if (mPlayer->GetPosition() + validNeighborPos[i] == mWumpus->GetPosition())
+		{
+			std::cout << "You smell a very stinky and unpleasant odor." << std::endl;
+		}
+		if (mPlayer->GetPosition() + validNeighborPos[i] == mGold->GetPosition())
+		{
+			std::cout << "Something glittering catches your eye." << std::endl;
+		}
 	}
 }
