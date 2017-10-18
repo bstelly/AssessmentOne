@@ -16,7 +16,7 @@ private:
 	int mNumRows;
 	int mNumHazards;
 
-	//Prototype: Void GenRooms()
+	//Prototype: void GenRooms()
 	//Arguments: None
 	//Description: Creates the rooms in the dungeon
 	//Precondition: There must be an instance of the dungeon class created
@@ -32,7 +32,7 @@ public:
 	//Protection Level: Public
 	Dungeon();
 
-	//Prototype: Dungeon(int rows, int cols)
+	//Prototype: Dungeon(Player* player, int rows, int cols)
 	//Arguments: two intergers
 	//Description:	Creates a new instance of the dungeon class based on the arguments
 	//				passed in
@@ -41,7 +41,7 @@ public:
 	//Protection Level: Public
 	Dungeon(Player* player, int rows, int cols);
 
-	//Prototype: CheckPlayerPosition()
+	//Prototype: int CheckPlayerPosition()
 	//Arguments: None
 	//Description: Checks to see what room the player is in
 	//Precondition: An instance of the player and dungeon classes must be created
@@ -49,7 +49,12 @@ public:
 	//Protection Level: Public
 	int CheckPlayerPosition();
 
-	
+	//Prototype: void CheckForNeighbors()
+	//Arguments: none
+	//Description: Checks to see what rooms are around the player
+	//Precondition: There must be a dungeon with a player assigned to it along with treasure, wumpus, and pit rooms
+	//PostCondition: a message is outputted to the console
+	//Protection Level: Public
 	void CheckForNeighbors();
 
 };

@@ -1,6 +1,5 @@
 #pragma once
 #include "Point2D.h"
-#include "MyString.h"
 
 class Player
 {
@@ -31,13 +30,43 @@ public:
 	//Protection Level: Public
 	Point2D GetPosition();
 
+	//Prototype: void SetPosition(Point2D position)
+	//Arguments: A Point2D
+	//Description: Sets the players position
+	//Precondition: There must be an instance of the player class already created
+	//Postcondition: The player's mPosition is now changed
+	//Protection Level: Public
 	void SetPosition(Point2D position);
 
+	//Prototype: void SetX_WhenBelowZero()
+	//Arguments: None
+	//Description: Resets the players position if their mX goes below 0
+	//Precondition: There must be an instance of the player class already created
+	//Postcondition: The player's mPosition is changed
+	//Protection Level: Public
 	void SetX_WhenBelowZero();
-
+	
+	//Prototype: void SetY_WhenBelowZero()
+	//Arguments: None
+	//Description: Resets the player's position if their mY goes below zero
+	//Precondition: There must be an instance of the player class already created
+	//Postcondition: The player's mPosition is changed
+	//Protection Level: Public
 	void SetY_WhenBelowZero();
 
+	//Prototype: void SetX_WhenAboveMax()
+	//Arguments: None
+	//Description: Resets the player's position if their mX goes above the max number
+	//Precondition: There must be an instance of the player class already created
+	//Postcondition: The player's mPosition is changed
+	//Protection Level: Public
 	void SetX_WhenAboveMax();
 
+	//Prototype: void SetY_WhenAboveMax()
+	//Arguments: None
+	//Description: Resets the player's position if their mY goes above the max number
+	//Precondition: There must be an instance of the player class already created
+	//Postcondition: The player's mPosition is changed
+	//Protection Level: Public
 	void SetY_WhenAboveMax();
 };

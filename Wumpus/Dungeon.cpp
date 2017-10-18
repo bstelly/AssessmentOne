@@ -2,7 +2,7 @@
 #include "Point2D.h"
 #include <time.h>	
 #include <iostream>
-
+using namespace std;
 
 void Dungeon::GenRooms()
 {
