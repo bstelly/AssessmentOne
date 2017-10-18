@@ -1,7 +1,7 @@
 #include "Player.h"
 #include <iostream>
 #include <string>
-
+using namespace std;
 Player::Player()
 {
 	mPosition = Point2D();

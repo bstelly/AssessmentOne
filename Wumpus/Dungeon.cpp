@@ -24,6 +24,8 @@ void Dungeon::GenRooms()
 	mNumHazards = numHazards;
 	for (int iter = 0; iter < numHazards; iter++)
 	{
+		randX = rand() % mNumRows;
+		randY = rand() % mNumCols;
 		while (randX <= 3)
 		{
 			randX = rand() % mNumRows;
@@ -149,19 +151,19 @@ int Dungeon::CheckPlayerPosition()		//return 0 if enter empty room
 
 void Dungeon::CheckForNeighbors()
 {
+	int counter = 0;
 	Point2D NeighborUp(0, 1);
 	Point2D NeighborDown(0, -1);
 	Point2D NeighborLeft(-1, 0);
 	Point2D NeighborRight(1, 0);
-	Point2D validNeighborPos[4] = {NeighborUp, NeighborRight, NeighborDown, NeighborLeft};
+	Point2D validNeighborPos[4] = { NeighborUp, NeighborRight, NeighborDown, NeighborLeft };
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < mNumHazards; j++)
 		{
 			if (mPlayer->GetPosition() + validNeighborPos[i] == mHazard[j].GetPosition())
 			{
-				std::cout << "You feel a cool breeze" << std::endl;
-				cout << endl;
+				counter++;
 			}
 		}
 		if (mPlayer->GetPosition() + validNeighborPos[i] == mWumpus->GetPosition())
@@ -174,5 +176,11 @@ void Dungeon::CheckForNeighbors()
 			std::cout << "Something glittering catches your eye." << std::endl;
 			cout << endl;
 		}
+	}
+	if (counter >= 1)
+	{
+		std::cout << "You feel a cool breeze" << std::endl;
+		cout << endl;
+		counter = 0;
 	}
 }

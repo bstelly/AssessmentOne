@@ -1,8 +1,7 @@
 #pragma once
 #include "Dungeon.h"
-#include "MyString.h"
 #include <iostream>
-
+using namespace	std;
 void DisplayInstructions()
 {
 	system("cls");
@@ -69,12 +68,12 @@ void Game()
 	//Main Game Loop
 	while (dungeon.CheckPlayerPosition() == 0)
 	{
-		cout << endl;
 		player.MovePlayer();
 		system("cls");
 		cout << "You move through the darkness, wandering aimlessly, unable to see.\n";
 		dungeon.CheckPlayerPosition();
 		dungeon.CheckForNeighbors();
+		std::cout << std::endl;
 	} 
 
 	if (dungeon.CheckPlayerPosition() == 1)
@@ -87,6 +86,7 @@ void Game()
 		system("pause");
 		cout << endl;
 		std::cout << "You have died." << endl;
+		std::cout << std::endl;
 		std::cout << "Game Over" << std::endl;
 	}
 	else if (dungeon.CheckPlayerPosition() == 2)
@@ -98,6 +98,7 @@ void Game()
 		system("pause");
 		cout << endl;
 		cout << "You have died" << endl;
+		std::cout << std::endl;
 		cout << "Game Over" << endl;
 	}
 	else if (dungeon.CheckPlayerPosition() == 3)
