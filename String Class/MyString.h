@@ -99,13 +99,6 @@ public:
 	//Precondition: 
 	//Postcondition: 
 	friend istream & operator >> (istream &in, MyString string);
-	
-	//Prototype: MyString ReplaceSubString(MyString substring, MyString newSubString);
-	//Arguments: 
-	//Description: 
-	//Precondition: 
-	//Postcondition: 
-	MyString ReplaceSubString(MyString substring, MyString newSubString);
 };
 
 

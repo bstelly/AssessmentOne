@@ -113,7 +113,6 @@
     <ClInclude Include="Dungeon.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Hazard.h" />
-    <ClInclude Include="MyString.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Point2D.h" />
     <ClInclude Include="Treasure.h" />
@@ -123,7 +122,6 @@
     <ClCompile Include="Dungeon.cpp" />
     <ClCompile Include="Hazard.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MyString.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Treasure.cpp" />

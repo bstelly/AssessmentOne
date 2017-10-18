@@ -32,6 +32,7 @@ int main()
 
 	int testNum = 1;
 	const char* test = "StringLength";
+	std::cout << "String Length should be 5.\n";
 	if (stringTwo.StringLength() == 5)
 	{
 		StringTestSuccess(testNum, test);
@@ -40,8 +41,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 	
 	testNum = 2;
+	std::cout << "Index 0 should be 'B'.\n" << std::endl;
 	test = "operator[]";
 	if(stringTwo[0] == 'B')
 	{
@@ -51,8 +54,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 3;
+	std::cout << "Comparing stringTwo and stringThree.\n" << std::endl;
 	test = "StringCompare";
 	if(stringTwo == stringThree)
 	{
@@ -62,8 +67,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 4;
+	std::cout << "Appending stringThree and StringFour.\n" << std::endl;
 	test = "StringAppend";
 	stringNine = stringThree + stringFour;
 	if(stringNine == stringSeven)
@@ -74,8 +81,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 5;
+	std::cout << "Prepending StringFour to StringThree.\n" << std::endl;
 	test = "StringPrepend";
 	if(stringThree.Prepend(stringFour) == stringEight)
 	{
@@ -85,8 +94,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 6;
+	std::cout << "Making stringTwo uppercase.\n" << std::endl;
 	test = "ToLower";
 	if(stringTwo.ToUpper() == stringFive)
 	{
@@ -96,8 +107,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 7;
+	std::cout << "Making stringTwo lowercase.\n" << std::endl;
 	test = "ToUpper";
 	if(stringTwo.ToLower() == stringSix)
 	{
@@ -107,8 +120,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 8;
+	std::cout << "Finding substring 'ret' in stringThree.\n" << std::endl;
 	test = "FindSubString";
 	if(stringThree.FindSubString("ret") == true)
 	{
@@ -118,8 +133,10 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 
 	testNum = 9;
+	std::cout << "Finding substring 'ret' from index '1' in stringThree\n" << std::endl;
 	test = "FindSubStringFromIndex";
 	if(stringThree.FindSubStringFromIndex(1, "ret") == true)
 	{
@@ -129,6 +146,7 @@ int main()
 	{
 		StringTestFail(testNum, test);
 	}
+	std::cout << std::endl;
 	testFile.close();
 
 	
