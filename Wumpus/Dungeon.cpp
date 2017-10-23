@@ -20,7 +20,35 @@ void Dungeon::GenRooms()
 	//Place pits in random rooms
 	float randX = 0;
 	float randY = 0;
-	int numHazards = rand() % ((mNumCols * mNumRows) / 4);
+	int difficulty;
+	int input = 0;
+	std::cout << "Select Difficulty: " << std::endl;
+	std::cout << std::endl;
+	std::cout << "(1) Easy    (2) Medium    (3) Hard" << std::endl;
+	std::cout << std::endl;
+	std::cin >> input;
+	switch (input)
+	{
+	case 1:
+		difficulty = 5;
+		std::cout << "You are playing on Easy." << std::endl;
+		system("pause");
+		system("cls");
+		break;
+	case 2:
+		difficulty = 3;
+		std::cout << "You are playing on Medium" << std::endl;
+		system("pause");
+		system("cls");
+		break;
+	case 3:
+		difficulty = 1;
+		std::cout << "You are playing on Hard" << std::endl;
+		system("pause");
+		system("cls");
+		break;
+	}
+	int numHazards = rand() % ((mNumCols * mNumRows) / difficulty);
 	mNumHazards = numHazards;
 	for (int iter = 0; iter < numHazards; iter++)
 	{
